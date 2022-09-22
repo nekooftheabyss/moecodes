@@ -8,6 +8,10 @@ export default defineNuxtConfig({
       meta: [
         { name: "description", hid: "description", content: Description },
       ],
+      link: [
+        { rel: "shortcut icon", href: "/neko.png"},
+        { rel: "apple-touch-icon", href: "/neko.png"},
+      ]
     },
   },
   sourcemap: {
