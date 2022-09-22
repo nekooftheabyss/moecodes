@@ -9,7 +9,7 @@ date: "2022-05-29"
 *<Message type="gray">This article assumes that you have already read [Linked-List in C](/l/c/single-linked-list) and does not provide much explanation.</Message>*
 
 A stack is a data structure where each element is stacked on top of the previous element. The last element pushed is the first element accessed.
-It follows the LIFO (Last-In, First-Out) architecture. In other words, uou cannot access any element on the bottom without taking elements out of the top.
+It follows the LIFO (Last-In, First-Out) architecture. In other words, you cannot access any element on the bottom without taking elements out of the top.
 
 ## Structure
 The structure is the same as a singly linked-list.
