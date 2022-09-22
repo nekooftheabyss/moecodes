@@ -9,5 +9,6 @@
         >
             <slot />
         </main>
+        <LayoutFooter />
     </div>
 </template>
