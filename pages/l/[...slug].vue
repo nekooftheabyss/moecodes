@@ -5,7 +5,7 @@
                 class="flex flex-col text-justify md:flex-row items-start max-w-7xl mx-auto md:justify-start space-y-8 gap-8 md:space-y-0 lg:space-x-8"
             >
                 <article
-                    class="prose prose-gray order-2 dark:prose-invert max-w-full lg:max-w-prose prose-code:before:content-none prose-code:after:content-none"
+                    class="prose prose-gray order-2 dark:prose-invert max-w-full lg:max-w-prose prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 bg-chaos-secondary rounded-xl"
                 >
                     <ContentRenderer :value="doc" />
                 </article>

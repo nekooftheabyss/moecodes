@@ -7,7 +7,9 @@ date: "2022-05-29"
 
 # Linked-List
 
-*<Message type="gray">This article assumes that you already know a bit of C, at least about function calls.</Message>*
+::Message{type="gray"}
+*This article assumes that you already know a bit of C, at least about function calls.*
+::
 
 A **linked-list** is a type of **collection** where elements are stored in random memory.
 
@@ -344,12 +346,10 @@ free(last);
 
 `free()`{lang="c"} is another function from `<stdlib>`{lang="c"} that allows us to free the memory to which our pointer is pointing.
 
-<Message type = "warning">
-
+::Message{type="warning"}
 `free()`{lang="c"} is a potentially destructive function. Calling free twice on the same pointer would result in deleting
 any new data that happened to be allocated to that memory address (definitely not what you intended to delete). 
-
-</Message>
+::
 
 Our complete function looks like this:
 

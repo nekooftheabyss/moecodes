@@ -6,11 +6,15 @@ date: "2022-05-29"
 ---
 
 # Queue
-*<Message type="gray">This article assumes that you have already read [Queue using Linked-List in C](/l/c/queue-linked-list) and does not provide much explanation.</Message>*
+::Message{type="gray"}
+*This article assumes that you have already read [Linked-List in C](/l/c/single-linked-list) and does not provide much explanation.*
+::
 
 This article is a sligtly sane approach towards how a queue works, using only ONE pointer, the `FRONT`.
 
-*<Message type="error">This article was written because of the author's own decision, and does not intend to portray this as the perfect example of a queue.</Message>*
+::Message{type="gray"}
+*This article was written because of the author's own decision, and does not intend to portray this as the perfect example of a queue.*
+::
 
 ## Structure
 The structure is the same as a singly linked-list.

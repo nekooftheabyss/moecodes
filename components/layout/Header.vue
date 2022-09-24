@@ -1,5 +1,5 @@
 <template>
-    <header class="fixed top-0 left-0 w-full bg-chaos-darker flex flex-row p-2">
+    <header class="fixed top-0 left-0 w-full bg-chaos-darker flex flex-row p-2 z-40">
         <div
             class="flex flex-row lg:items-center max-w-10xl mx-auto w-full justify-between"
         >
@@ -8,7 +8,7 @@
                     inline-flex
                     items-center
                     justify-center
-                    p-2
+                    p-2 lg:hidden
                     rounded-md
                   text-white focus:outline-none
         `"
@@ -87,7 +87,7 @@
                     }`"
                 >
                     <div
-                        v-for="result in results"
+                        v-for="result in results.sort((a, b) => a.title.localeCompare(b.title))"
                         :key="result.title"
                         class="hover:bg-chaos-secondary transition duration-500 ease-in-out overflow-ellipsis p-2"
                     >

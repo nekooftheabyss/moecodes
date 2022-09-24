@@ -7,7 +7,9 @@ date: "2022-05-29"
 
 # Doubly Linked-List
 
-*<Message type="gray">This article assumes that you have already read [Linked-List in C](/l/c/single-linked-list) and does not provide much explanation.</Message>*
+::Message{type="gray"}
+*This article assumes that you have already read [Linked-List in C](/l/c/single-linked-list) and does not provide much explanation.*
+::
 
 ## Linked-List structure
 

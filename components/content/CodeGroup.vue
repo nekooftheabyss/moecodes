@@ -1,17 +1,17 @@
 <template>
-    <div class="code-group">
-        <div class="rounded-t-md bg-chaos-primary text-sm text-white relative">
+    <div class="rounded-t-md bg-chaos-primary p-2">
+        <div class="text-sm text-white relative">
             <button
-                v-for="({}, i) in tabs"
-                :key="labelsSplit[i] || `label_${i}`"
-                :class="`px-4 py-3 text-gray-400 font-bold font-mono ${
+                v-for="(label, i) in labelsSplit"
+                :key="label"
+                :class="`px-4 py-3 text-gray-400 font-bold font-mono transition-all duration-500 ease-in-out border-b ${
                     activeTabIndex === i
-                        ? 'active border-b border-chaos-foreground'
-                        : ''
+                        ? 'active border-chaos-foreground'
+                        : 'border-transparent'
                 }`"
                 @click="updateTabs(i)"
             >
-                {{ labelsSplit[i] }}
+                {{ label }}
             </button>
         </div>
         <div ref="blocks">
@@ -21,10 +21,10 @@
 </template>
 
 <script setup lang="ts">
-    const tabs = ref([]);
+    const tabs = ref<HTMLCollection>();
     const activeTabIndex = ref(0);
     watch(activeTabIndex, (newValue, oldValue) => switchTab(newValue));
-    const blocks = ref();
+    const blocks = ref<HTMLElement>();
 
     onMounted(() => {
         tabs.value = blocks.value.children;
@@ -32,27 +32,17 @@
     const { labels } = defineProps<{ labels: string }>();
     const labelsSplit = labels.split(" ");
     function switchTab(i) {
-        tabs.value.forEach((tab) => {
-            (tab as HTMLElement).style.display = "none";
-        });
-        (tabs.value[i] as HTMLElement).style.display = "block";
+        let n = 0;
+        while (n < tabs.value.length) {
+            tabs.value.item(n).className = "hidden";
+            n += 1;
+        }
+        tabs.value.item(i).className = "block";
     }
     function updateTabs(i: number) {
+        try {
         activeTabIndex.value = i;
+        }
+        catch(e) {console.error(e)}
     }
 </script>
-<style scoped>
-    button {
-        outline: none;
-    }
-    .highlight-underline {
-        bottom: -2px;
-        height: 2px;
-        transition: left 150ms, width 150ms;
-    }
-    /*  .code-group ::v-deep {
-    & pre[class*="language-"] {
-      @apply rounded-t-none mt-0;
-    }
-  }*/
-</style>

@@ -5,4 +5,4 @@ head.image: '/neko.png'
 date: '2022-05-29'
 ---
 
-The design is very WIP.
+Started this website as a personal side project of mine. Something like an archive of various stuff I learned at random times.

@@ -6,7 +6,9 @@ date: "2022-05-29"
 ---
 
 # Queue
-*<Message type="gray">This article assumes that you have already read [Linked-List in C](/l/c/single-linked-list) and does not provide much explanation.</Message>*
+::Message{type="gray"}
+*This article assumes that you have already read [Linked-List in C](/l/c/single-linked-list) and does not provide much explanation.*
+::
 
 A queue is a linear data structure that follows the FIFO (First-In, First-Out) architecture. 
 It is like how people stand in a queue to buy something. The first person who goes in is the
