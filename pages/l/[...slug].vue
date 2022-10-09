@@ -1,19 +1,24 @@
 <template>
     <article>
-        <ContentDoc v-slot="{ doc }">
-            <div
-                class="flex flex-col text-justify md:flex-row items-start max-w-7xl mx-auto md:justify-start space-y-8 gap-8 md:space-y-0 lg:space-x-8"
-            >
-                <article
-                    class="prose prose-gray order-2 dark:prose-invert max-w-full lg:max-w-prose prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 bg-chaos-secondary rounded-xl"
+        <ContentDoc>
+            <template #default="{ doc }">
+                <div
+                    class="flex flex-col text-justify md:flex-row items-start max-w-7xl mx-auto md:justify-start space-y-8 gap-8 md:space-y-0 lg:space-x-8"
                 >
-                    <ContentRenderer :value="doc" />
-                </article>
-                <BlogTableOfContents
-                    :content="doc.body.toc.links"
-                    class="order-1"
-                />
-            </div>
+                    <article
+                        class="prose prose-gray order-2 dark:prose-invert max-w-full lg:max-w-prose prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 bg-chaos-secondary rounded-xl"
+                    >
+                        <ContentRenderer :value="doc" />
+                    </article>
+                    <BlogTableOfContents
+                        :content="doc.body.toc.links"
+                        class="order-1"
+                    />
+                </div>
+            </template>
+            <template #not-found>
+                <div>Invalid article</div>
+            </template>
         </ContentDoc>
     </article>
 </template>
@@ -30,4 +35,4 @@
         @apply font-semibold no-underline;
     }
 </style>
-<script></script>
+<script setup lang="ts"></script>

@@ -1,16 +1,41 @@
 <template>
-    <article>
+    <article class="mx-auto flex flex-col items-center space-y-8">
         <ContentDoc v-slot="{ doc }">
             <div
                 class="flex flex-col text-justify md:flex-row items-start max-w-7xl mx-auto md:justify-start space-y-8 gap-8 md:space-y-0 lg:space-x-8"
             >
                 <article
-                class="prose prose-gray order-2 dark:prose-invert max-w-full lg:max-w-prose prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 bg-chaos-primary rounded-xl"
+                    class="prose prose-gray order-2 dark:prose-invert max-w-full lg:max-w-prose prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 bg-chaos-secondary rounded-xl"
                 >
                     <ContentRenderer :value="doc" />
                 </article>
             </div>
         </ContentDoc>
+        <nav>
+            <ContentNavigation v-slot="{ navigation }">
+                <div v-for="link of navigation" :key="link._path">
+                    <h2 class="font-semibold text-xl">{{ link.title }}</h2>
+                    <ul class="p-2" v-if="link.children?.length">
+                        <li v-for="child in link.children" :key="child._path">
+                            <h3 class="font-semibold text-lg">
+                                {{ child.title }}
+                            </h3>
+                            <ul class="p-2" v-if="child.children?.length">
+                                <li
+                                    v-for="grandchild in child.children"
+                                    :key="grandchild._path"
+                                    class="text-chaos-foreground"
+                                >
+                                    <NuxtLink :to="grandchild._path">{{
+                                        grandchild.title
+                                    }}</NuxtLink>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </ContentNavigation>
+        </nav>
     </article>
 </template>
 

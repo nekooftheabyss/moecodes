@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         // Theme used if `html.sepia`
         sepia: "monokai",
       },
-      preload: ["c", "sql"],
+      preload: ["c", "sql", "scala", "r"],
     },
   },
 });
