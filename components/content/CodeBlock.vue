@@ -1,5 +1,5 @@
 <template>
-    <div :class="`${active ? 'block' : 'hidden'}`">
+    <div :class="`${active ? 'block' : 'hidden'} overflow-x-auto`">
         <ContentSlot :use="$slots.default" unwrap="p" />
     </div>
 </template>
