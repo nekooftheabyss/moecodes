@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded-t-md bg-chaos-primary p-2">
+    <div class="rounded-t-md bg-zinc-800 p-2">
         <div class="text-sm text-white relative">
             <button
                 v-for="(label, i) in labelsSplit"
