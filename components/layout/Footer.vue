@@ -1,6 +1,6 @@
 
 <template>
-  <footer class="bg-none dark:bg-chaos-darker text-chaos-primary dark:text-white shadow-md text-center md:text-left w-full">
+  <footer class="bg-none dark:bg-zinc-900 text-chaos-primary dark:text-white shadow-md text-center md:text-left w-full">
     <div
       class="
         sm:flex
@@ -22,7 +22,7 @@
             target="_blank"
             class="font-bold text-chaos-tertiary dark:text-chaos-foreground"
           >
-            2022 Neko Of The Abyss
+            2022 Moecodes
           </a>
         </span>
       </div>

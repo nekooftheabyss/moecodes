@@ -1,5 +1,5 @@
 <template>
-    <header class="fixed top-0 left-0 w-full bg-chaos-darker flex flex-row p-2 z-40">
+    <header class="top-0 left-0 w-full bg-zinc-900 flex flex-row p-2 z-40 border-b border-zinc-600">
         <div
             class="flex flex-row lg:items-center max-w-10xl mx-auto w-full justify-between"
         >
@@ -47,12 +47,12 @@
 
             <section id="search" class="relative">
                 <div
-                    class="bg-chaos-primary text-chaos-foreground border-chaos-tertiary rounded-xl h-12 p-1 flex flex-row items-center justify-between"
+                    class="bg-zinc-800 text-chaos-foreground border-chaos-tertiary rounded-xl h-12 p-1 flex flex-row items-center justify-between"
                 >
                     <input
                         type="text"
                         v-model="searchQuery"
-                        class="bg-transparent w-72 p-2"
+                        class="bg-transparent w-72 p-2 focus:outline-none"
                         placeholder="Search for something"
                     />
                     <button class="p-2" @click="resetSearchQuery">
@@ -80,7 +80,7 @@
                     </button>
                 </div>
                 <div
-                    :class="`absolute top-16 w-72 bg-chaos-primary rounded-xl border-chaos-tertiary border-1 transition-all duration-500 ease-in-out ${
+                    :class="`absolute top-16 w-full lg:w-96 bg-zinc-700 rounded-xl border-chaos-tertiary border-1 transition-all duration-500 ease-in-out ${
                         searchQuery
                             ? 'max-h-[30rem] overflow-y-auto'
                             : 'max-h-0 overflow-y-hidden'
@@ -89,7 +89,7 @@
                     <div
                         v-for="result in results.sort((a, b) => a.title.localeCompare(b.title))"
                         :key="result.title"
-                        class="hover:bg-chaos-secondary transition duration-500 ease-in-out overflow-ellipsis p-2"
+                        class="hover:bg-zinc-500 transition duration-500 ease-in-out overflow-ellipsis p-2"
                     >
                         <a class="block" :href="result.path">{{
                             result.title
@@ -99,20 +99,20 @@
             </section>
             <section
                 id="nav"
-                :class="`p-2 flex lg:flex-row flex-col lg:items-center min-h-screen lg:min-h-0 w-full gap-4 fixed lg:static top-16 left-0 transition duration-500 ease-in-out bg-chaos-darker lg:bg-transparent lg:translate-x-0 ${
+                :class="`p-2 flex lg:flex-row flex-col lg:items-center min-h-screen lg:min-h-0 w-full gap-4 fixed lg:static top-16 left-0 transition duration-500 ease-in-out bg-zinc-900 lg:bg-transparent lg:translate-x-0 ${
                     navState ? 'translate-x-0' : '-translate-x-200'
                 }`"
             >
                 <a href="/">
                     <button
-                        class="block w-full py-2 px-4 hover:bg-chaos-primary transition-all duration-500 ease-in-out border-b-2 border-transparent hover:border-chaos-foreground"
+                        class="block w-full py-2 px-4 hover:bg-zinc-900 transition-all duration-500 ease-in-out border-b-2 border-transparent hover:border-chaos-foreground"
                     >
                         Home
                     </button>
                 </a>
                 <a href="https://github.com/nekooftheabyss/moecodes">
                     <button
-                        class="block w-full py-2 px-4 hover:bg-chaos-primary transition-all duration-500 ease-in-out border-b-2 border-transparent hover:border-chaos-foreground"
+                        class="block w-full py-2 px-4 hover:bg-zinc-900 transition-all duration-500 ease-in-out border-b-2 border-transparent hover:border-chaos-foreground"
                     >
                         Contribute
                     </button>
