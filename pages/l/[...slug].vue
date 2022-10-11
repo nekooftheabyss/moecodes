@@ -1,53 +1,57 @@
 <template>
-    <article class="flex-1">
-        <ContentDoc>
-            <template #default="{ doc }">
-                <div
-                    class="pt-8 flex flex-col flex-grow text-justify lg:flex-row items-start lg:justify-start space-y-8 gap-8 lg:space-y-0 lg:space-x-8"
-                >
-                    <article
-                        class="prose prose-gray order-2 lg:order-1 dark:prose-invert lg:max-w-4xl flex-grow w-full prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 bg-transparent rounded-xl lg:h-[75vh] overflow-y-auto"
+    <NuxtLayout>
+        <article class="lg:flex flex-1">
+            <LayoutNav class="hidden lg:flex" />
+            <ContentDoc>
+                <template #default="{ doc }">
+                    <div
+                        class="pt-8 flex flex-col flex-grow text-justify lg:flex-row items-start lg:justify-start space-y-8 gap-8 lg:space-y-0 lg:space-x-8"
                     >
-                        <ContentRenderer :value="doc" />
-                        <nav
-                            key="navigation"
-                            class="flex flex-col lg:flex-row w-full items-center justify-between mt-8 gap-8"
+                        <article
+                            class="prose prose-gray order-2 lg:order-1 dark:prose-invert lg:max-w-4xl flex-grow w-full prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 bg-transparent rounded-xl lg:h-[75vh] overflow-y-auto"
                         >
-                            <NuxtLink
-                                v-if="prev"
-                                :to="prev._path"
-                                class="p-2 flex flex-col space-y-2 lg:border-zinc-600 border rounded-xl no-underline w-full"
+                            <ContentRenderer :value="doc" />
+                            <nav
+                                key="navigation"
+                                class="flex flex-col lg:flex-row w-full items-center justify-between mt-8 gap-8"
                             >
-                                <span class="text-sm text-left">Prev</span>
-
-                                <span class="text-chaos-foreground text-left">{{
-                                    prev.title
-                                }}</span>
-                            </NuxtLink>
-                            <NuxtLink
-                                v-if="next"
-                                :to="next._path"
-                                class="p-2 flex flex-col space-y-2 lg:border-zinc-600 border rounded-xl no-underline w-full"
-                            >
-                                <span class="text-sm text-right">Next</span>
-                                <span
-                                    class="text-chaos-foreground text-right"
-                                    >{{ next.title }}</span
+                                <NuxtLink
+                                    v-if="prev && prev._path.includes(parent)"
+                                    :to="prev._path"
+                                    class="p-2 flex flex-col space-y-2 lg:border-zinc-600 border rounded-xl no-underline w-full"
                                 >
-                            </NuxtLink>
-                        </nav>
-                    </article>
-                    <BlogTableOfContents
-                        :content="doc.body.toc.links"
-                        class="order-1 lg:order-2 text-left lg:h-[75vh] overflow-y-auto"
-                    />
-                </div>
-            </template>
-            <template #not-found>
-                <div>Invalid article</div>
-            </template>
-        </ContentDoc>
-    </article>
+                                    <span class="text-sm text-left">Prev</span>
+
+                                    <span
+                                        class="text-chaos-foreground text-left"
+                                        >{{ prev.title }}</span
+                                    >
+                                </NuxtLink>
+                                <NuxtLink
+                                    v-if="next && next._path.includes(parent)"
+                                    :to="next._path"
+                                    class="p-2 flex flex-col space-y-2 lg:border-zinc-600 border rounded-xl no-underline w-full"
+                                >
+                                    <span class="text-sm text-right">Next</span>
+                                    <span
+                                        class="text-chaos-foreground text-right"
+                                        >{{ next.title }}</span
+                                    >
+                                </NuxtLink>
+                            </nav>
+                        </article>
+                        <BlogTableOfContents
+                            :content="doc.body.toc.links"
+                            class="order-1 lg:order-2 text-left lg:h-[75vh] overflow-y-auto"
+                        />
+                    </div>
+                </template>
+                <template #not-found>
+                    <div>Invalid article</div>
+                </template>
+            </ContentDoc>
+        </article>
+    </NuxtLayout>
 </template>
 
 <style lang="postcss">

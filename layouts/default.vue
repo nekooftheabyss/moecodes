@@ -5,43 +5,29 @@
         <!--        <div class = "fixed -bottom-24 -right-24 bg-chaos-tertiary w-96 h-96 blur-2xl rounded-full opacity-60" />-->
         <LayoutHeader />
         <main
-            class="flex z-0 flex-col lg:flex-row flex-1 max-w-fit lg:max-w-9xl mx-auto w-full pb-12 px-2"
+            class="flex z-0 flex-col flex-1 max-w-fit lg:max-w-9xl mx-auto w-full pb-12 px-2"
         >
-            <aside
-                class="hidden lg:flex flex-col lg:flex-shrink-0 items-start space-y-8 border-r border-zinc-600 pt-8 lg:h-[75vh] overflow-y-auto pr-2 w-full lg:w-64"
-            >
-                <ContentNavigation v-slot="{ navigation }">
-                    <div
-                        v-for="link of navigation.reduce((acc: any[], v: any) => acc.concat(v.children), []).filter(x => x && x?._path.includes(parent))"
-                        :key="link._path"
-                    >
-                        <h2 class="font-semibold text-lg">{{ link.title }}</h2>
-                        <ul
-                            class="py-2 flex flex-col items-start space-y-8 text-sm"
-                            v-if="link.children?.length"
-                        >
-                            <li
-                                v-for="child in link.children"
-                                :key="child._path"
-                                :class="`${
-                                    child._path === route.path
-                                        ? `font-bold underline`
-                                        : ``
-                                } text-chaos-foreground`"
-                            >
-                                <NuxtLink :to="child._path">{{
-                                    child.title
-                                }}</NuxtLink>
-                            </li>
-                        </ul>
-                    </div>
-                </ContentNavigation>
-            </aside>
             <slot />
         </main>
         <LayoutFooter />
     </div>
 </template>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    .page-enter-active,
+    .page-leave-active {
+        transition: opacity 0.5s;
+        transition-property: background-color, border-color, color, fill, stroke,
+            opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 169ms;
+    }
+    .page-enter,
+    .page-leave-active {
+        opacity: 0;
+        transition-duration: 420ms;
+    }
+</style>
 <script setup lang="ts">
     const route = useRoute();
 

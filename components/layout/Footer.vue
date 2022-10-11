@@ -18,8 +18,7 @@
         <span>
           Copyright
           <a
-            href="https://github.com/nekooftheabyss"
-            target="_blank"
+            href="/"
             class="font-bold text-chaos-tertiary dark:text-chaos-foreground"
           >
             2022 Moecodes
@@ -28,7 +27,7 @@
       </div>
       <div class="flex-initial mt-3 sm:mt-0 dark:text-chaos-foreground">
         <a
-          href="https://nekooftheabyss.moe"
+          href="https://github.com/nekooftheabyss"
           target="_blank"
           class="font-semibold"
         >

@@ -1,5 +1,7 @@
 <template>
-    <header class="top-0 left-0 w-full bg-zinc-900 flex flex-row p-2 z-40 border-b border-zinc-600">
+    <header
+        class="top-0 left-0 w-full bg-zinc-900 flex flex-row p-2 z-40 border-b border-zinc-600 fixed lg:relative"
+    >
         <div
             class="flex flex-row lg:items-center max-w-10xl mx-auto w-full justify-between"
         >
@@ -87,7 +89,9 @@
                     }`"
                 >
                     <div
-                        v-for="result in results.sort((a, b) => a.title.localeCompare(b.title))"
+                        v-for="result in results.sort((a, b) =>
+                            a.title.localeCompare(b.title)
+                        )"
                         :key="result.title"
                         class="hover:bg-zinc-500 transition duration-500 ease-in-out overflow-ellipsis p-2"
                     >
@@ -99,9 +103,7 @@
             </section>
             <section
                 id="nav"
-                :class="`p-2 flex lg:flex-row flex-col lg:items-center min-h-screen lg:min-h-0 w-full gap-4 fixed lg:static top-16 left-0 transition duration-500 ease-in-out bg-zinc-900 lg:bg-transparent lg:translate-x-0 ${
-                    navState ? 'translate-x-0' : '-translate-x-200'
-                }`"
+                :class="`p-2 hidden lg:flex lg:flex-roww-full gap-4 relative lg:bg-transparent`"
             >
                 <a href="/">
                     <button
@@ -117,6 +119,14 @@
                         Contribute
                     </button>
                 </a>
+            </section>
+            <section
+                id="nav"
+                :class="`p-2 flex lg:hidden flex-col lg:items-center overflow-y-auto min-h-screen w-full gap-4 absolute top-16 left-0 transition duration-500 ease-in-out bg-zinc-900 ${
+                    navState ? 'translate-x-0' : '-translate-x-200'
+                }`"
+            >
+                <LayoutNav class="lg:hidden" />
             </section>
         </div>
     </header>
