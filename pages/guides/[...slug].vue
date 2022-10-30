@@ -47,7 +47,7 @@
                     </div>
                 </template>
                 <template #not-found>
-                    <div class = "p-8">Select an article from the list in the menu.</div>
+                    <div class = "p-8">Select a guide from the list in the menu.</div>
                 </template>
             </ContentDoc>
         </article>

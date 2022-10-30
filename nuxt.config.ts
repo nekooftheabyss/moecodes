@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/content",
-    "@pinia/nuxt",
+//    "@pinia/nuxt",
     "nuxt-schema-org",
   ],
 

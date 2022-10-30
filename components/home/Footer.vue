@@ -1,6 +1,6 @@
 
 <template>
-  <footer class="bg-none dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-md text-center md:text-left w-full">
+  <footer class="bg-none dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-md text-center md:text-left">
     <div
       class="
         sm:flex
@@ -18,16 +18,17 @@
         <span>
           Copyright
           <a
-            href="/"
+            href="https://github.com/retraigo"
+            target="_blank"
             class="font-bold text-chaos-tertiary dark:text-chaos-foreground"
           >
-            2022 Moecodes
+            NeTT
           </a>
         </span>
       </div>
       <div class="flex-initial mt-3 sm:mt-0 dark:text-chaos-foreground">
         <a
-          href="https://github.com/nekooftheabyss"
+          href="https://nekooftheabyss.moe"
           target="_blank"
           class="font-semibold"
         >
@@ -38,8 +39,3 @@
   </footer>
 </template>
 
-
-
-<script setup>
-
-</script>

@@ -36,5 +36,5 @@ const toggleNav = ref(false)
     const route = useRoute();
 
     const paths = route.path.split("/");
-    const parent = paths.slice(0, paths.length - 1).join("/");
+    const parent = ["guides", "l", "blog"].includes(paths.at(-1).toLowerCase()) ? paths.join("/") : paths.slice(0, paths.length - 1).join("/");
 </script>

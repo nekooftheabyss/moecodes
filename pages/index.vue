@@ -1,53 +1,67 @@
 <template>
     <NuxtLayout>
-        <article class="mx-auto flex flex-col items-center space-y-8">
-            <ContentDoc v-slot="{ doc }">
+        <div class="flex flex-col space-y-96 lg:space-y-108 w-full pt-24">
+            <!-- HERO -->
+            <div class="flex flex-col space-y-96 lg:space-y-108">
                 <div
-                    class="flex flex-col text-justify md:flex-row items-start max-w-7xl mx-auto md:justify-start space-y-8 gap-8 md:space-y-0 lg:space-x-8"
+                    ref="item1"
+                    class="text-4xl lg:text-6xl font-extrabold text-center text-zinc-900 dark:text-chaos-foreground"
                 >
-                    <article
-                        class="prose prose-gray order-2 dark:prose-invert max-w-full lg:max-w-prose prose-code:before:content-none prose-code:after:content-none p-2 lg:px-4 rounded-xl"
-                    >
-                        <ContentRenderer :value="doc" />
-                    </article>
+                    Gaze into the abyss.
                 </div>
-            </ContentDoc>
-            <nav>
-                <ContentNavigation v-slot="{ navigation }">
-                    <div
-                        v-for="link of navigation.find((x) => x.title === `L`)
-                            .children"
-                        :key="link._path"
-                    >
-                        <h2 class="font-semibold text-xl">{{ link.title }}</h2>
-                        <ul class="p-2" v-if="link.children?.length">
-                            <li
-                                v-for="child in link.children"
-                                :key="child._path"
-                                class="text-chaos-foreground"
-                            >
-                                <NuxtLink :to="child._path">{{
-                                    child.title
-                                }}</NuxtLink>
-                            </li>
-                        </ul>
-                    </div>
-                </ContentNavigation>
-            </nav>
-        </article>
+                <div
+                    ref="item2"
+                    class="text-4xl lg:text-6xl font-extrabold text-center text-zinc-900 dark:text-white"
+                >
+                    Does the abyss really gaze back at you?
+                </div>
+                <div
+                    ref="item3"
+                    class="text-4xl lg:text-6xl font-extrabold text-center text-zinc-900 dark:text-chaos-foreground"
+                >
+                    It is probably the mysterious cat that resides in it.
+                </div>
+                <div
+                    ref="item4"
+                    class="w-full flex flex-row justify-between items-center space-x-4 opacity-70"
+                >
+                    <img
+                        src="/eye/Neko_L.webp"
+                        class="w-36 md:w-72 lg:w-96 animate-pulse"
+                        alt="Right eye of the mysterious neko"
+                    />
+                    <img
+                        src="/eye/Neko_R.webp"
+                        class="w-36 md:w-72 lg:w-96 animate-pulse"
+                        alt="Left eye of the mysterious neko"
+                    />
+                </div>
+            </div>
+            <div class="p-8">
+                <div class="text-4xl lg:text-6xl font-extrabold text-center">
+                    There are two routes ahead of you.
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <CardChoice
+                    title="La Lala"
+                    description="Generates random text."
+                    image="/lala.png"
+                    link="https://lala.nett.moe"
+                />
+                <CardChoice
+                    title="Pranev"
+                    description="The dude that owns Neko Of The Abyss."
+                    image="/nett.png"
+                    link="https://nett.moe"
+                />
+            </div>
+        </div>
     </NuxtLayout>
 </template>
-
-<style lang="postcss">
-    /* Customize headers to remove default underline */
-    .prose h2 a {
-        @apply no-underline transition duration-500 ease-in-out block font-bold border-b border-neutral-600 dark:border-neutral-300;
-        &:hover {
-            @apply text-zinc-600 dark:text-chaos-foreground;
-        }
-    }
-    .prose h3 a {
-        @apply font-semibold no-underline;
-    }
-</style>
-<script></script>
+<script setup>
+    definePageMeta({
+        title: "Home",
+        layout: "landing",
+    });
+</script>
