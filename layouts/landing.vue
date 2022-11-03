@@ -17,9 +17,6 @@
         md:bg-svg-light bg-right
         dark:bg-svg-dark-sm
         dark:md:bg-svg-dark-->
-      <HomeHeader
-        :title="nuxtApp._route.path.split('/').reverse()[0] || 'home'"
-      />
       <main
         class="
           flex-1

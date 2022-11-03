@@ -1,6 +1,6 @@
 <template>
     <aside
-        class="flex flex-col lg:flex-shrink-0 items-start space-y-8 lg:border-r border-zinc-600 pt-8 lg:h-[75vh] overflow-y-auto pr-2 w-full lg:w-64"
+        class="flex flex-col lg:flex-shrink-0 items-start space-y-8 lg:border-r border-zinc-600 pt-8 h-screen lg:h-[75vh] overflow-y-auto pr-2 w-full lg:w-64"
     >
             <ContentNavigation v-slot="{ navigation }">
                 <div

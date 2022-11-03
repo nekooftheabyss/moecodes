@@ -44,10 +44,10 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <CardChoice
-                    title="La Lala"
-                    description="Generates random text."
-                    image="/lala.png"
-                    link="https://lala.nett.moe"
+                    title="Site Index"
+                    description="Too lazy to write proper UI."
+                    image="/neko.svg"
+                    link="/l"
                 />
                 <CardChoice
                     title="Pranev"
