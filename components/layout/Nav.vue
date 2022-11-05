@@ -7,7 +7,7 @@
                     v-for="link of navigation.reduce((acc: any[], v: any) => acc.concat(v.children), []).filter(x => x && x?._path.includes(parent))"
                     :key="link._path"
                 >
-                    <h2 class="font-semibold text-lg">{{ link.title }}</h2>
+                    <NuxtLink class="font-semibold text-lg" to="/l">{{ link.title }}</NuxtLink>
                     <ul
                         class="py-2 flex flex-col items-start space-y-8 text-sm"
                         v-if="link.children?.length"
