@@ -26,12 +26,12 @@
                     class="w-full flex flex-row justify-between items-center space-x-4 opacity-70"
                 >
                     <img
-                        src="/eye/Neko_L.webp"
+                        src="/eye/Neko_L.svg"
                         class="w-36 md:w-72 lg:w-96 animate-pulse"
                         alt="Right eye of the mysterious neko"
                     />
                     <img
-                        src="/eye/Neko_R.webp"
+                        src="/eye/Neko_R.svg"
                         class="w-36 md:w-72 lg:w-96 animate-pulse"
                         alt="Left eye of the mysterious neko"
                     />

@@ -1,6 +1,8 @@
 <template>
     <header
-        class="top-0 left-0 w-full bg-zinc-900 flex flex-row p-2 z-40 border-b border-zinc-600 fixed lg:relative"
+        :class="`top-0 left-0 w-full bg-zinc-900 flex flex-row p-2 z-40 border-b ${layoutStore.hoverFooterLogo
+                    ? `border-chaos-foreground`
+                    : `border-zinc-600`} fixed lg:relative transition-color duration-500 ease-in-out`"
     >
         <div
             class="flex flex-row lg:items-center max-w-10xl mx-auto w-full justify-between"
@@ -133,6 +135,8 @@
 </template>
 
 <script setup>
+    const layoutStore = useLayoutStore();
+
     const searchQuery = ref("");
     const resetSearchQuery = () => (searchQuery.value = "");
     const nav = await fetchContentNavigation();

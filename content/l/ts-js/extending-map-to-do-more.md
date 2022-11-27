@@ -10,7 +10,7 @@ date: "2022-05-29"
 A **map** is an abstract data type composed of **key-value** pairs. JavaScript comes with the
 built-in `Map`{lang="ts"} object that allows creating a map easily.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  const myMap = new Map();
@@ -56,7 +56,7 @@ Now let's move on to implementing them.
 
 Classes in JavaScript can be extended using the `extends`{lang="ts"} keyword.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  class ExtendedMap extends Map {
@@ -76,7 +76,7 @@ Classes in JavaScript can be extended using the `extends`{lang="ts"} keyword.
 
 Since we are extending an existing class, we should follow up with a `super()`{lang="ts"} call.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  class ExtendedMap extends Map {
@@ -102,7 +102,7 @@ Cool. Next comes adding custom methods.
 
 ## Implementing Methods
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  class ExtendedMap extends Map {
@@ -148,7 +148,7 @@ first element that passes our condition.
 For this, we first convert our Map into an iterator. To do so, we use `Map.prototype.entries()`{lang="ts"}.
 We can then iterate over the result using a `for..of` loop.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  find() {
@@ -173,7 +173,7 @@ We can then iterate over the result using a `for..of` loop.
 Our `find()`{lang="ts"} method needs one parameter, the test function. The function should return a truthy
 value in order to return an element.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  find(fn) {
@@ -199,7 +199,7 @@ value in order to return an element.
 
 Next is of course, running our test function on each entry in the map.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  find(fn) {
@@ -225,7 +225,7 @@ There we have, our simple `find()`{lang="ts"} method. However, this method will
 return NOTHING if it didn't find a match. In that case, we can return a `null`{lang="ts"}
 or `undefined`{lang="ts"}.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  find(fn) {
@@ -256,7 +256,7 @@ all elements that pass our condition.
 
 The working is the same as our `find()`{lang="ts"} method.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  filter(fn) {
@@ -280,7 +280,7 @@ The working is the same as our `find()`{lang="ts"} method.
 
 The only change is that we are returning an array of elements now.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  filter(fn) {
@@ -316,7 +316,7 @@ in the collection and returns an array of results.
 
 Starting from where we left our `filter`{lang="ts"},
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  map(fn) {
@@ -344,7 +344,7 @@ Starting from where we left our `filter`{lang="ts"},
 
 All we need to do is, remove the condition and push the function result instead.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  map(fn) {
@@ -380,7 +380,7 @@ result as a parameter. Like a chain.
 
 Let's continue from where we left our `map()`{lang="ts"}.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  reduce(fn) {
@@ -410,7 +410,7 @@ Let's continue from where we left our `map()`{lang="ts"}.
 We will need two parameters, one being the callback and the other being the initial
 value of our result.
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  reduce(fn, first) {
@@ -443,7 +443,7 @@ And that's it! We have implemented `reduce()`{lang="ts"} for our extended `Map`{
 
 Check out the full source code with even more methods at [retraigo/bettermap](https://github.com/retraigo/bettermap)
 
-::CodeGroup{labels="JavaScript TypeScript"}
+::CodeGroup{labels="JavaScript;TypeScript"}
  :::CodeBlock{label="JavaScript" active}
  ```ts
  class ExtendedMap extends Map {

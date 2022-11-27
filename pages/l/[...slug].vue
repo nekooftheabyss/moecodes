@@ -49,6 +49,9 @@
                 <template #not-found>
                     <div class = "p-8">Select an article from the list in the menu.</div>
                 </template>
+                <template #empty>
+                    <div class = "p-8">There is nothing here.</div>
+                </template>
             </ContentDoc>
         </article>
     </NuxtLayout>
@@ -78,7 +81,8 @@
 
     const paths = route.path.split("/");
     const parent = paths.slice(0, paths.length - 1).join("/");
-    function pleaseLog(x) {
+    function pleaseLog(x: any) {
         console.log(x.value);
     }
+
 </script>

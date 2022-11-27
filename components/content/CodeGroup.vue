@@ -27,17 +27,17 @@
     const blocks = ref<HTMLElement>();
 
     onMounted(() => {
-        tabs.value = blocks.value.children;
+        tabs.value = (blocks.value as HTMLElement).children;
     });
     const { labels } = defineProps<{ labels: string }>();
-    const labelsSplit = labels.split(" ");
-    function switchTab(i) {
+    const labelsSplit = labels.split(";");
+    function switchTab(i: number) {
         let n = 0;
-        while (n < tabs.value.length) {
-            tabs.value.item(n).className = "hidden";
+        while (n < (tabs.value as HTMLCollection).length) {
+            ((tabs.value as HTMLCollection).item(n) as Element).className = "hidden";
             n += 1;
         }
-        tabs.value.item(i).className = "block";
+       ((tabs.value as HTMLCollection).item(i) as Element).className = "block";
     }
     function updateTabs(i: number) {
         try {

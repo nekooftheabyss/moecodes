@@ -33,7 +33,7 @@
 
     const paths = route.path.split("/");
     const parent = paths.slice(0, paths.length - 1).join("/");
-    function pleaseLog(x) {
-        console.log(x.value);
-    }
+    
+    const layoutStore = useLayoutStore();
+
 </script>
