@@ -84,7 +84,7 @@
                     </button>
                 </div>
                 <div
-                    :class="`absolute top-16 w-full lg:w-96 bg-zinc-700 rounded-xl border-chaos-tertiary border-1 transition-all duration-500 ease-in-out ${
+                    :class="`absolute top-16 w-full lg:w-72 bg-zinc-700 rounded-xl border-chaos-tertiary border-1 transition-all duration-500 ease-in-out ${
                         searchQuery
                             ? 'max-h-[30rem] overflow-y-auto'
                             : 'max-h-0 overflow-y-hidden'

@@ -5,7 +5,7 @@
         <!--        <div class = "fixed -bottom-24 -right-24 bg-chaos-tertiary w-96 h-96 blur-2xl rounded-full opacity-60" />-->
         <LayoutHeader />
         <main
-            class="flex z-0 flex-col flex-1 max-w-fit lg:max-w-9xl mx-auto w-full pb-12 px-2"
+            class="flex z-0 flex-col flex-1 max-w-fit lg:max-w-9xl mx-auto w-full pb-12 px-2 py-16 lg:py-0"
         >
             <slot />
         </main>
